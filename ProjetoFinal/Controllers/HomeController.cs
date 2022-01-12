@@ -17,7 +17,9 @@ namespace ProjetoFinal.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Sales Web MVC Web";
+            ViewData["email"] = "Rafael Eisele";
+
 
             return View();
         }
