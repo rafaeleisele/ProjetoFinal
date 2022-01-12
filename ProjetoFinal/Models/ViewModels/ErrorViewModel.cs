@@ -1,6 +1,7 @@
 using System;
 
 namespace ProjetoFinal.Models
+
 {
     public class ErrorViewModel
     {

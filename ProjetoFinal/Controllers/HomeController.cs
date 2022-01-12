@@ -18,7 +18,7 @@ namespace ProjetoFinal.Controllers
         public IActionResult About()
         {
             ViewData["Message"] = "Sales Web MVC Web";
-            ViewData["User"] = "Rafael Eisele";
+            ViewData["email"] = "Rafael Eisele";
 
 
             return View();
