@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ProjetoFinal.Models;
 
-namespace ProjetoFinal.Data
+namespace ProjetoFinal.Models
+
 {
     public class ProjetoFinalContext : DbContext
     {
@@ -14,6 +15,8 @@ namespace ProjetoFinal.Data
         {
         }
 
-        public DbSet<ProjetoFinal.Models.Department> Department { get; set; }
+        public DbSet<Department> Department { get; set; }
+        public DbSet<Seller> Seller { get; set; }
+        public DbSet<SalesRecord> SalesRecord { get; set; }
     }
 }
