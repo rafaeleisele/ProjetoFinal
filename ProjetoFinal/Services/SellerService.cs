@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using ProjetoFinal.Models;
 using Microsoft.EntityFrameworkCore;
+using ProjetoFinal.Services.Exceptions;
 
 namespace ProjetoFinal.Services
 {
@@ -37,6 +38,23 @@ namespace ProjetoFinal.Services
             var obj = _context.Seller.Find(Id);
             _context.Seller.Remove(obj);
             _context.SaveChanges();
+        }
+
+        public void UpDate(Seller obj)
+        {
+            if (!_context.Seller.Any(x => x.Id == obj.Id))
+            {
+                throw new NotFoundException("Id not found.");
+            }
+            try
+            {
+                _context.Update(obj);
+                _context.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException e)
+            {
+                throw new DbConcurrencyException(e.Message);
+            }
         }
     }
 }
